@@ -1,0 +1,23 @@
+{
+  "project_name": "OpsPulse",
+  "default_region": "ap-south-1",
+  "lookback_hours": 6,
+  "metrics": {
+    "namespace": "AWS/EC2",
+    "cpu_utilization": {
+      "metric_name": "CPUUtilization",
+      "statistic": "Average",
+      "period_seconds": 300,
+      "unit": "Percent"
+    }
+  },
+  "alarm_examples": {
+    "cpu_high_threshold_percent": 80,
+    "evaluation_periods": 2,
+    "datapoints_to_alarm": 2
+  },
+  "notes": [
+    "Example configuration only; adjust to your workload and costs.",
+    "Memory and filesystem metrics generally require CloudWatch Agent or custom metrics."
+  ]
+}

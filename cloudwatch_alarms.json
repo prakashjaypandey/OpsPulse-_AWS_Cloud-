@@ -1,0 +1,39 @@
+{
+  "alarm_examples": [
+    {
+      "alarm_name": "OpsPulse-EC2-High-CPU",
+      "description": "Example alarm for sustained EC2 CPU usage; review threshold for workload suitability.",
+      "namespace": "AWS/EC2",
+      "metric_name": "CPUUtilization",
+      "dimensions": {"InstanceId": "REPLACE_WITH_INSTANCE_ID"},
+      "statistic": "Average",
+      "period_seconds": 300,
+      "evaluation_periods": 2,
+      "datapoints_to_alarm": 2,
+      "threshold": 80,
+      "comparison_operator": "GreaterThanThreshold",
+      "unit": "Percent",
+      "treat_missing_data": "notBreaching",
+      "actions_enabled": false,
+      "alarm_actions": ["REPLACE_WITH_SNS_TOPIC_ARN"]
+    },
+    {
+      "alarm_name": "OpsPulse-EC2-StatusCheck-Failed",
+      "description": "Example alarm for EC2 status-check failures.",
+      "namespace": "AWS/EC2",
+      "metric_name": "StatusCheckFailed",
+      "dimensions": {"InstanceId": "REPLACE_WITH_INSTANCE_ID"},
+      "statistic": "Maximum",
+      "period_seconds": 60,
+      "evaluation_periods": 1,
+      "datapoints_to_alarm": 1,
+      "threshold": 1,
+      "comparison_operator": "GreaterThanOrEqualToThreshold",
+      "unit": "Count",
+      "treat_missing_data": "notBreaching",
+      "actions_enabled": false,
+      "alarm_actions": ["REPLACE_WITH_SNS_TOPIC_ARN"]
+    }
+  ],
+  "note": "This is a configuration example, not a deployable CloudFormation template. Review, replace placeholders, and deploy alarms separately."
+}

@@ -1,0 +1,37 @@
+{
+  "widgets": [
+    {
+      "type": "metric",
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "title": "EC2 CPU Utilization",
+        "region": "ap-south-1",
+        "view": "timeSeries",
+        "stacked": false,
+        "period": 300,
+        "stat": "Average",
+        "metrics": [
+          ["AWS/EC2", "CPUUtilization", "InstanceId", "REPLACE_WITH_INSTANCE_ID"]
+        ]
+      }
+    },
+    {
+      "type": "metric",
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "title": "EC2 Network In / Out",
+        "region": "ap-south-1",
+        "view": "timeSeries",
+        "stacked": false,
+        "period": 300,
+        "stat": "Sum",
+        "metrics": [
+          ["AWS/EC2", "NetworkIn", "InstanceId", "REPLACE_WITH_INSTANCE_ID"],
+          ["AWS/EC2", "NetworkOut", "InstanceId", "REPLACE_WITH_INSTANCE_ID"]
+        ]
+      }
+    }
+  ]
+}
